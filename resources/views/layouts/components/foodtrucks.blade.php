@@ -12,7 +12,21 @@
         </div>
 
         <div class="container">
-
+            <div class="row no-gutters">
+                <form action="#" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="search">&nbsp;&nbsp;
+                        <select name="" id="" class="form-control">
+                            <option value="">Bisha</option>
+                            <option value="">Dammam</option>
+                            <option value="">Abha</option>
+                            <option value="">Ad-Dilam</option>
+                        </select>&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-info">search</button>
+                    </div>
+                </form>
+            </div>
+            <br>
           <div class="row no-gutters">
 
  @for ($x= 0; $x <= 10; $x++)
@@ -20,10 +34,10 @@
     <div class="sched d-block d-lg-flex">
       <div class="bg-image order-2" style="background-image: url('https://rh_marketplace.s3.amazonaws.com/cropped/list/xkYGSVGVQBiFrdqz78s7_bb%20exterior%201.jpg');" data-aos="fade"></div>
       <div class="text order-1">
-        <h3>Grilled Caesar salad, shaved reggiano</h3>
+        <a href="/trucks"><h3>Grilled Caesar salad, shaved reggiano</h3></a>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
         <p class="text-primary h5"><span style="color:red"> 12.00 SAR </span> for Day</p>
-        <button type="submit" class="btn btn-xs btn-info">Order</button>
+        <button type="submit" class="btn btn-xs btn-info">Book Now</button>
       </div>
 
     </div>
@@ -34,7 +48,7 @@
           <h3>Grilled Caesar salad, shaved reggiano</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
           <p class="text-primary h5"><span style="color:red"> 12.00 SAR </span> for Day</p>
-          <button type="submit" class="btn btn-xs btn-info">Order</button>
+          <button type="submit" class="btn btn-xs btn-info">Book Now</button>
         </div>
 
     </div>

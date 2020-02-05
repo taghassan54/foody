@@ -6,14 +6,15 @@
 
 
     {{--  category section  --}}
-   {{--  @include('layouts.components.category') --}}
+    @include('layouts.components.category')
 
 
     {{--  top reated section  --}}
-{{--     @include('layouts.components.topreated')
+    @include('layouts.components.topreated')
 
- --}}
+
+
     {{--  food trucks section  --}}
-    @include('layouts.components.foodtrucks')
+    @include('layouts.components.recipes')
 
 @endsection

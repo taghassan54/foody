@@ -40,6 +40,14 @@
             </a>
           </div>
         </div>
-  
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h5 class="text-success">available</h5>
+                <a href="#" class="btn btn-lg btn-primary">Book Now</a>
+                <h6>Hire the right gourmet food truck for your next catered event</h6>
+            </div>
+        </div>
+
+
       </section> <!-- .section -->
-  

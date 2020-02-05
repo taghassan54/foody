@@ -209,23 +209,9 @@
     {{--  header section  --}}
     @include('layouts.components.header')
 
-    {{--  slider section  --}}
-    @include('layouts.components.slider')
 
 
-    {{--  category section  --}}
-   {{--  @include('layouts.components.category') --}}
-
-
-    {{--  top reated section  --}}
-    @include('layouts.components.topreated')
-
-
-    {{--  food trucks section  --}}
-    @include('layouts.components.foodtrucks')
-
-
-
+@yield('content')
 
 
 {{--

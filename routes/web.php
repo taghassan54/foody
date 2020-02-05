@@ -14,6 +14,9 @@
 Route::get('/cpanel', function () {
     return view('cpanel');
 });
+Route::get('/trucks', function () {
+    return view('trucks');
+});
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,3 +24,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('cities', 'CitiesController');
+Route::resource('foodtruck', 'FoodTruckController');
+Route::resource('meals', 'MealsController');
+Route::resource('ingredients', 'IngredientsController');
+Route::resource('category', 'CategoryController');
