@@ -17,10 +17,17 @@ trait uploadable {
         return $path . '/' . $imgName;
     }
 
+    /**
+     *
+     *
+     */
     public function getImgAttribute($value){
         return $value?$value:'/admin/dist/img/default-150x150.png';
     }
 
+    /**
+     *
+     */
     public function setImgAttribute($value)
     {
 
@@ -29,6 +36,12 @@ trait uploadable {
         }else{
             $this->attributes['img'] ='/admin/dist/img/default-150x150.png';
           }
+    }
+
+
+    public function getFileExtAttribute(){
+        $ext=explode('.',$this->img);
+          return end($ext);
     }
 
 }

@@ -21,6 +21,7 @@
                 <th>ID</th>
                 <th>name</th>
                 <th>image</th>
+                <th>Image Extension</th>
 
                 <th>controll</th>
               </tr>
@@ -32,7 +33,8 @@
                     <td>{{ $loop->iteration }}</td>
                     <td> {{ $category->name }} </td>
 
-                    <td> <img src="{{ $category->img }}" alt="" width="15%" srcset=""> </td>
+                    <td> <img src="{{ $category->img }}" alt="" width="100" srcset=""> </td>
+                    <td> {{ $category->file_ext }} </td>
                     <td>
                     <form action="{{ Route('category.destroy',$category->id) }}" method="POST">
                         @csrf
