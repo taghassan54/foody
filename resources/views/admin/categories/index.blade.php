@@ -20,6 +20,7 @@
               <tr class="text-center">
                 <th>ID</th>
                 <th>name</th>
+                <th>image</th>
 
                 <th>controll</th>
               </tr>
@@ -30,6 +31,8 @@
                 <tr class="text-center">
                     <td>{{ $loop->iteration }}</td>
                     <td> {{ $category->name }} </td>
+
+                    <td> <img src="{{ $category->img }}" alt="" width="15%" srcset=""> </td>
                     <td>
                     <form action="{{ Route('category.destroy',$category->id) }}" method="POST">
                         @csrf
