@@ -35,8 +35,15 @@ class CategoryController extends Controller
    */
   public function store(Request $request)
   {
-    $Category=Category::create($request->all());
-
+    $data=$request->all();
+    $data['img']='/admin/dist/img/default-150x150.png';
+    $Category=Category::create($data);
+    if($request->hasFile('img')){
+     return $Category->uploade($request->file('img'));
+    }
+    
+    return $Category; //$Category->uploade();
+    return $request;
     return back();
   }
 
