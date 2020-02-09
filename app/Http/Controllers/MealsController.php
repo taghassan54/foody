@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class MealsController extends Controller 
+use App\Meals;
+class MealsController extends Controller
 {
 
   /**
@@ -14,7 +14,8 @@ class MealsController extends Controller
    */
   public function index()
   {
-    
+      $meals=Meals::paginate(10);
+    return view('admin.meals.index',compact('meals'));
   }
 
   /**
@@ -24,7 +25,7 @@ class MealsController extends Controller
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -34,7 +35,10 @@ class MealsController extends Controller
    */
   public function store(Request $request)
   {
-    
+     
+    $meals=Meals::create($request->all());
+
+    return back();
   }
 
   /**
@@ -45,7 +49,7 @@ class MealsController extends Controller
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -56,7 +60,11 @@ class MealsController extends Controller
    */
   public function edit($id)
   {
-    
+$meal=Meals::find($id);
+if(empty($meal))
+return back();
+
+return view('admin\cities\edit',compact('meal'));
   }
 
   /**
@@ -65,9 +73,10 @@ class MealsController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function update($id)
+  public function update($id,Request $request)
   {
-    
+    $meal=Meals::find($id)->update($request->all());
+    return redirect()->route('meals.index');
   }
 
   /**
@@ -78,9 +87,10 @@ class MealsController extends Controller
    */
   public function destroy($id)
   {
-    
+    $meal=Meals::find($id)->delete();
+    return back();
   }
-  
+
 }
 
 ?>

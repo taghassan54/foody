@@ -26,6 +26,8 @@
                     </div>
                 </form>
             </div>
+            <a href="#" style="float:right" class="btn btn-secondary">Serch In Google Map</a>
+            <br>
             <br>
           <div class="row no-gutters">
 

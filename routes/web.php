@@ -29,3 +29,4 @@ Route::resource('foodtruck', 'FoodTruckController');
 Route::resource('meals', 'MealsController');
 Route::resource('ingredients', 'IngredientsController');
 Route::resource('category', 'CategoryController');
+Route::resource('customers', 'customersController');

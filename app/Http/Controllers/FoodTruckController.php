@@ -1,10 +1,15 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\FoodTruck;
+use App\Cities;
+use App\User;
+use App\Category;
+use Illuminate\Support\Facades\Hash;
 
-class FoodTruckController extends Controller 
+class FoodTruckController extends Controller
 {
 
   /**
@@ -14,7 +19,10 @@ class FoodTruckController extends Controller
    */
   public function index()
   {
-    
+      $foodtrucks=FoodTruck::paginate(10);
+        $Cities=Cities::all();
+        $categories=Category::all();
+    return view('admin.foodtruck.index',compact('foodtrucks','Cities','categories'));
   }
 
   /**
@@ -24,7 +32,7 @@ class FoodTruckController extends Controller
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -34,7 +42,31 @@ class FoodTruckController extends Controller
    */
   public function store(Request $request)
   {
-    
+
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255'],
+        'password' => ['required', 'string', 'min:8'],
+    ]);
+if(User::where('email',$request->email)->count()>0){
+    $user=User::where('email',$request->email)->first();
+}else{
+    $user= User::create([
+        'name' =>  $request->owner,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+    ]);
+}
+
+
+
+
+    $data=$request->all();
+    $data['user_id']=$user->id;
+
+    $foodtruck=FoodTruck::create($data);
+
+    return back();
   }
 
   /**
@@ -45,7 +77,9 @@ class FoodTruckController extends Controller
    */
   public function show($id)
   {
-    
+    $foodtruck=FoodTruck::find($id);
+    $categories=Category::all();
+    return view('admin\foodtruck\show',compact('foodtruck','categories'));
   }
 
   /**
@@ -56,7 +90,9 @@ class FoodTruckController extends Controller
    */
   public function edit($id)
   {
-    
+$foodtruck=FoodTruck::find($id);
+$Cities=Cities::all();
+return view('admin\foodtruck\edit',compact('foodtruck','Cities'));
   }
 
   /**
@@ -65,9 +101,10 @@ class FoodTruckController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function update($id)
+  public function update($id,Request $request)
   {
-    
+    $foodtruck=FoodTruck::find($id)->update($request->all());
+    return redirect()->route('foodtruck.index');
   }
 
   /**
@@ -78,9 +115,10 @@ class FoodTruckController extends Controller
    */
   public function destroy($id)
   {
-    
+    $foodtruck=FoodTruck::find($id)->delete();
+    return back();
   }
-  
+
 }
 
 ?>

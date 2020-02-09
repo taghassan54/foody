@@ -34,6 +34,22 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/foodtruck" class="nav-link">
+              <i class="nav-icon fas fa-truck"></i>
+              <p>
+                FoodTruck Controll
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/customers" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                customers Controll
+              </p>
+            </a>
+          </li>
 
 
         </ul>

@@ -39,7 +39,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-
+        @include('layouts.components.validationErrors')
         @yield('content')
 
       </div><!--/. container-fluid -->

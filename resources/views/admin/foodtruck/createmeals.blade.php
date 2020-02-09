@@ -10,15 +10,15 @@
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">add new city</h4>
+          <h4 class="modal-title">add new food-truck</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
 
         <!-- Modal body -->
         <div class="modal-body">
-        <form action="{{ Route('cities.store') }}"  method="POST">
+        <form action="{{ Route('meals.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
-                @include('admin.cities.fields')
+                 @include('admin.foodtruck.mealsfields')
             </form>
         </div>
 

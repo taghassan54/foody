@@ -60,6 +60,9 @@ class CitiesController extends Controller
   public function edit($id)
   {
 $city=Cities::find($id);
+if(empty($city))
+return back();
+
 return view('admin\cities\edit',compact('city'));
   }
 

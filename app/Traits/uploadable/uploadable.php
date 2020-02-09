@@ -1,5 +1,6 @@
 <?php
 namespace App\Traits\uploadable;
+use Illuminate\Support\Facades\Storage;
 
 trait uploadable {
        /**
@@ -13,6 +14,7 @@ trait uploadable {
     public function uploade($file, $path='/uploade', $prefix = "prefix"){
         $public_path = public_path() . $path;
         $imgName = $prefix . '_' . time() . "." . $file->getClientOriginalExtension();
+       /*  $path = $file->storeAs('public/avatars',$imgName); */
         $file->move($public_path, $imgName);
         return $path . '/' . $imgName;
     }
@@ -30,7 +32,7 @@ trait uploadable {
      */
     public function setImgAttribute($value)
     {
-
+        // dd(get_class($this) );
         if(request()->hasFile('img')){
             $this->attributes['img']= $this->uploade(request()->file('img'));
         }else{
