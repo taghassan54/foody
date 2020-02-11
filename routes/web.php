@@ -14,11 +14,12 @@
 Route::get('/cpanel', function () {
     return view('cpanel');
 });
-Route::get('/trucks', function () {
+/* Route::get('/trucks', function () {
     return view('trucks');
-});
+}); */
 Route::get('/', function () {
-    return view('welcome');
+   return  redirect()->route('home');
+    // return view('welcome');
 });
 
 Auth::routes();
@@ -30,3 +31,4 @@ Route::resource('meals', 'MealsController');
 Route::resource('ingredients', 'IngredientsController');
 Route::resource('category', 'CategoryController');
 Route::resource('customers', 'customersController');
+Route::get('/trucks/{id}','FoodTruckController@showforuser');

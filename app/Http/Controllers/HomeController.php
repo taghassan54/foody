@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\FoodTruck;
+use App\Cities;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        if(auth()->check() && auth()->user->role==2)
         return view('home');
+        else{
+            $foodtrucks=FoodTruck::all();
+            $cities=Cities::all();
+            return view('welcome',compact('foodtrucks','cities'));
+        }
+
     }
 }

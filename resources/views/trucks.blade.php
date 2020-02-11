@@ -6,7 +6,7 @@
 
 
     {{--  category section  --}}
-    @include('layouts.components.category')
+    {{-- @include('layouts.components.category') --}}
 
 
     {{--  top reated section  --}}

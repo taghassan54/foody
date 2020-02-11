@@ -83,6 +83,19 @@ if(User::where('email',$request->email)->count()>0){
   }
 
   /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return Response
+   */
+  public function showforuser($id)
+  {
+    $foodtruck=FoodTruck::find($id);
+    $categories=Category::all();
+    return view('trucks',compact('foodtruck','categories'));
+  }
+
+  /**
    * Show the form for editing the specified resource.
    *
    * @param  int  $id

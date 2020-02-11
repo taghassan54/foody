@@ -1,6 +1,34 @@
 
     <section class="section ">
 
+        <div class="row">
+            <div class="col-12 text-center">
+
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-">
+                        <li class="list-group-item">Name : {{ $foodtruck->name }}</li>
+                        <li class="list-group-item">Owner : {{ $foodtruck->owner }}</li>
+                        <li  class="list-group-item">City : {{ $foodtruck->city?$foodtruck->city->name:'' }} </li>
+                        <li  class="list-group-item"> Fee : {{ $foodtruck->fee }} </li>
+                        <li  class="list-group-item"> Description : {{ $foodtruck->description }} </li>
+                        <li  class="list-group-item"> Status : {{ $foodtruck->status }}
+
+                    </ul>
+                    </div>
+
+                    <div class="col-6">
+
+                <h5 class="text-success">available</h5>
+                <a href="#" class="btn btn-lg btn-primary">Book Now</a>
+                <h6>Hire the right gourmet food truck for your next catered event</h6>
+                <img src="{{ $foodtruck->img }}" alt="" width="500" srcset="">
+
+            </div>
+            </div>
+            </div>
+        </div>
+
         <div class="clearfix mb-5 pb-5">
           <div class="container-fluid mb-5">
             <div class="row" data-aos="fade">
@@ -10,43 +38,17 @@
             </div>
           </div>
           <div class="owl-carousel centernonloop">
-            <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="100">
+            @foreach ($foodtruck->meals()->where('is_special',1)->get() as $meal)
+            <a href="#" class="item-dishes" data-aos="fade-right" style="width:615px;height:384px" data-aos-delay="100">
               <div class="text">
-                <p class="dishes-price">$11.50</p>
-                <h2 class="dishes-heading">Organic tomato salad, gorgonzola cheese, capers</h2>
+                <p class="dishes-price">{{ $meal->price }} </p>
+                <h2 class="dishes-heading">{{ $meal->name }}</h2>
               </div>
-              <img src="/user/img/dishes_1.jpg" alt="" class="img-fluid">
+              <img src="{{ $meal->img }}" alt="" class="img-fluid">
             </a>
-            <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="200">
-              <div class="text">
-                <p class="dishes-price">$12.00</p>
-                <h2 class="dishes-heading">Baked broccoli</h2>
-              </div>
-              <img src="/user/img/dishes_2.jpg" alt="" class="img-fluid">
-            </a>
-            <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="300">
-              <div class="text">
-                <p class="dishes-price">$11.00</p>
-                <h2 class="dishes-heading">Spicy meatballs</h2>
-              </div>
-              <img src="/user/img/dishes_3.jpg" alt="" class="img-fluid">
-            </a>
-            <a href="#" class="item-dishes" data-aos="fade-right" data-aos-delay="400">
-              <div class="text">
-                <p class="dishes-price">$12.00</p>
-                <h2 class="dishes-heading">Eggplant parmigiana</h2>
-              </div>
-              <img src="/user/img/dishes_4.jpg" alt="" class="img-fluid">
-            </a>
-          </div>
-        </div>
+            @endforeach
 
-        <div class="row">
-            <div class="col-12 text-center">
-                <h5 class="text-success">available</h5>
-                <a href="#" class="btn btn-lg btn-primary">Book Now</a>
-                <h6>Hire the right gourmet food truck for your next catered event</h6>
-            </div>
+          </div>
         </div>
 
 
