@@ -51,6 +51,7 @@
                      </tr>
 
                 @endforeach
+
 <tr>
     <td colspan="8">{{ $foodtrucks->links() }}</td>
 </tr>

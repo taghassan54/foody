@@ -32,3 +32,8 @@ Route::resource('ingredients', 'IngredientsController');
 Route::resource('category', 'CategoryController');
 Route::resource('customers', 'customersController');
 Route::get('/trucks/{id}','FoodTruckController@showforuser');
+Route::get('/create',function(){
+
+    exec('cat  ../resources/views/welcome.blade.php > ../resources/views/test/test.blade.php', $out);
+    var_dump($out);
+});

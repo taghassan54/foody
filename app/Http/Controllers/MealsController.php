@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Meals;
+use App\Category;
+
 class MealsController extends Controller
 {
 
@@ -35,7 +37,7 @@ class MealsController extends Controller
    */
   public function store(Request $request)
   {
-     
+
     $meals=Meals::create($request->all());
 
     return back();
@@ -63,8 +65,8 @@ class MealsController extends Controller
 $meal=Meals::find($id);
 if(empty($meal))
 return back();
-
-return view('admin\cities\edit',compact('meal'));
+$categories=Category::all();
+return view('admin\meals\edit',compact('meal','categories'));
   }
 
   /**
@@ -76,7 +78,7 @@ return view('admin\cities\edit',compact('meal'));
   public function update($id,Request $request)
   {
     $meal=Meals::find($id)->update($request->all());
-    return redirect()->route('meals.index');
+    return back();
   }
 
   /**

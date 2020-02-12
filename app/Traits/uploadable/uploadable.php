@@ -36,7 +36,11 @@ trait uploadable {
         if(request()->hasFile('img')){
             $this->attributes['img']= $this->uploade(request()->file('img'));
         }else{
-            $this->attributes['img'] ='/admin/dist/img/default-150x150.png';
+            if(!empty($this->img)){
+                $this->attributes['img'] =$this->img;
+            }else{
+                $this->attributes['img'] ='/admin/dist/img/default-150x150.png';
+            }
           }
     }
 

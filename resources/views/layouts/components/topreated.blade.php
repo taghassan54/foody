@@ -12,7 +12,8 @@
                         <li  class="list-group-item">City : {{ $foodtruck->city?$foodtruck->city->name:'' }} </li>
                         <li  class="list-group-item"> Fee : {{ $foodtruck->fee }} </li>
                         <li  class="list-group-item"> Description : {{ $foodtruck->description }} </li>
-                        <li  class="list-group-item"> Status : {{ $foodtruck->status }}
+                        <li  class="list-group-item"> Status : {{ $foodtruck->status }}</li>
+                        <li  class="list-group-item"> Location : <div id='map'></div> </li>
 
                     </ul>
                     </div>
