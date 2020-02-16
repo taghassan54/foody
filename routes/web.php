@@ -23,17 +23,28 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('cities', 'CitiesController');
-Route::resource('foodtruck', 'FoodTruckController');
-Route::resource('meals', 'MealsController');
-Route::resource('ingredients', 'IngredientsController');
-Route::resource('category', 'CategoryController');
-Route::resource('customers', 'customersController');
 Route::get('/trucks/{id}','FoodTruckController@showforuser');
-Route::get('/create',function(){
 
-    exec('cat  ../resources/views/welcome.blade.php > ../resources/views/test/test.blade.php', $out);
-    var_dump($out);
+
+Route::group([ 'middleware' => 'auth'], function()
+{
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('cities', 'CitiesController');
+    Route::resource('foodtruck', 'FoodTruckController');
+    Route::resource('meals', 'MealsController');
+    Route::resource('ingredients', 'IngredientsController');
+    Route::resource('category', 'CategoryController');
+    Route::resource('customers', 'customersController');
+    Route::resource('sliders', 'SliderController');
+    Route::get('/trucks/{id}/booking','FoodTruckController@booking');
+    Route::post('/booking','FoodTruckController@createbooking');
+
 });
+
+
+/* Route::get('/create',function(){
+    /* exec('cat  ../resources/views/welcome.blade.php > ../resources/views/test/test.blade.php', $out);
+    var_dump($out);
+}); */
+
+

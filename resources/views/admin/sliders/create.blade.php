@@ -10,15 +10,15 @@
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">add new slider</h4>
+          <h4 class="modal-title">add new category</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
 
         <!-- Modal body -->
         <div class="modal-body">
-        <form action="{{ Route('sliders.store') }}" enctype="multipart/form-data" method="POST">
+        <form action="{{ Route('category.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
-                @include('admin.sliders.fields')
+                @include('admin.categories.fields')
             </form>
         </div>
 

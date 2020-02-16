@@ -21,7 +21,12 @@
                     <div class="col-6">
 
                 <h5 class="text-success">available</h5>
-                <a href="#" class="btn btn-lg btn-primary">Book Now</a>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+ Book Now
+</button>
+
                 <h6>Hire the right gourmet food truck for your next catered event</h6>
                 <img src="{{ $foodtruck->img }}" alt="" width="500" srcset="">
 
@@ -54,3 +59,4 @@
 
 
       </section> <!-- .section -->
+  @include('bookingForm')

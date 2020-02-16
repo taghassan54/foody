@@ -65,8 +65,26 @@ if(User::where('email',$request->email)->count()>0){
     $data['user_id']=$user->id;
 
     $foodtruck=FoodTruck::create($data);
-
+    $user->update([
+        'role' =>2,
+    ]);
     return back();
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @return Response
+   */
+  public function createbooking(Request $request)
+  {
+
+    /* $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255'],
+        'password' => ['required', 'string', 'min:8'],
+    ]); */
+
   }
 
   /**
@@ -93,6 +111,18 @@ if(User::where('email',$request->email)->count()>0){
     $foodtruck=FoodTruck::find($id);
     $categories=Category::all();
     return view('trucks',compact('foodtruck','categories'));
+  }
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return Response
+   */
+  public function booking($id)
+  {
+    $foodtruck=FoodTruck::find($id);
+    $categories=Category::all();
+    return view('booking',compact('foodtruck','categories'));
   }
 
   /**

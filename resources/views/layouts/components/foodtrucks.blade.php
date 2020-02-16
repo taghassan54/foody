@@ -39,21 +39,11 @@
       <a href="/trucks/{{ $foodtruck->id }}"><h3> {{ $foodtruck->name }}</h3></a>
         <p> {{ $foodtruck->description }} </p>
         <p class="text-primary h5"><span style="color:red"> {{ $foodtruck->fee?$foodtruck->fee:0 }} SAR </span> for Day</p>
-        <button type="submit" class="btn btn-xs btn-info">Book Now</button>
+        <a href="/trucks/{{ $foodtruck->id }}/booking"  class="btn btn-xs btn-info">Book Now</a>
       </div>
 
     </div>
 
-{{--     <div class="sched d-block d-lg-flex">
-      <div class="bg-image" style="background-image: url('https://rh_marketplace.s3.amazonaws.com/cropped/list/LArgnNEUSbekTRe4mdfh_1825%202.JPG');" data-aos="fade"></div>
-      <div class="text order-1">
-          <h3>Grilled Caesar salad, shaved reggiano</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-          <p class="text-primary h5"><span style="color:red"> 12.00 SAR </span> for Day</p>
-          <button type="submit" class="btn btn-xs btn-info">Book Now</button>
-        </div>
-
-    </div> --}}
 
   </div>
 

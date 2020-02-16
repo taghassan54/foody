@@ -21,6 +21,10 @@ class FoodTruck extends Model
     {
         return $this->belongsTo('App\Cities');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
     public function meals()
     {
         return $this->hasMany('App\Meals','foodtruck_id');

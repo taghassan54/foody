@@ -24,7 +24,7 @@ trait uploadable {
      *
      */
     public function getImgAttribute($value){
-        return $value?$value:'/admin/dist/img/default-150x150.png';
+        return $value ? $value:'/admin/dist/img/default-150x150.png';
     }
 
     /**

@@ -24,9 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // dd(auth()->user()->role);
+        if(auth()->check() && auth()->user()->role==1){
+            return view('cpanel');
+        }elseif (auth()->check() && auth()->user()->role==2) {
 
-        if(auth()->check() && auth()->user->role==2)
-        return view('home');
+        }
         else{
             $foodtrucks=FoodTruck::all();
             $cities=Cities::all();

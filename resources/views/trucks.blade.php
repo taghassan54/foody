@@ -27,6 +27,7 @@
     @include('layouts.components.slider')
 
 
+
     {{--  category section  --}}
     {{-- @include('layouts.components.category') --}}
 
