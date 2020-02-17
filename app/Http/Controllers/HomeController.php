@@ -28,7 +28,8 @@ class HomeController extends Controller
         if(auth()->check() && auth()->user()->role==1){
             return view('cpanel');
         }elseif (auth()->check() && auth()->user()->role==2) {
-
+                $foodtrucks= auth()->user()->foodtrucks;
+                return view('admin.foodtruck.select',compact('foodtrucks'));
         }
         else{
             $foodtrucks=FoodTruck::all();

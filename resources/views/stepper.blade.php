@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <form role="form" action="/booking" method="POST" >
+    <form role="form" action="/bookings" method="POST" >
         @csrf
         <div class="panel panel-primary setup-content" id="step-1">
             <div class="panel-heading">
@@ -27,15 +27,15 @@
             <div class="panel-body">
                 <div class="form-group">
                     <label class="control-label">date</label>
-                    <input maxlength="100" type="date" required required="required" class="form-control" placeholder="Enter First Name" />
+                    <input maxlength="100" type="date" name="date" required required="required" class="form-control" placeholder="Enter First Name" />
                 </div>
                 <div class="form-group">
                     <label class="control-label">Start time</label>
-                    <input maxlength="100" type="time" required required="required" class="form-control" placeholder="Enter Last Name" />
+                    <input maxlength="100" type="time" name="starttime"  required required="required" class="form-control" placeholder="Enter Last Name" />
                 </div>
                 <div class="form-group">
                     <label class="control-label">End time</label>
-                    <input maxlength="100" type="time" required required="required" class="form-control" placeholder="Enter Last Name" />
+                    <input maxlength="100" type="time" name="endtime" required required="required" class="form-control" placeholder="Enter Last Name" />
                 </div>
                 <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
             </div>
@@ -48,7 +48,10 @@
             <div class="panel-body">
                 <div class="form-group">
                     <label class="control-label"> number of eaters</label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder=" Enter number of eaters" />
+                    <input maxlength="200" type="text" name="number_of_eaters" required="required" class="form-control" placeholder=" Enter number of eaters" />
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="foodtruck_id" value="{{ $foodtruck->id }}" />
                 </div>
 
                 <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
@@ -62,15 +65,15 @@
             <div class="panel-body">
                 <div class="form-group">
                     <label class="control-label">Your Name</label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Your Name" />
+                    <input maxlength="200" type="text" name="name" required="required" class="form-control" placeholder="Enter Your Name" />
                 </div>
                 <div class="form-group">
                     <label class="control-label">Your Email Address</label>
-                    <input maxlength="200" type="email" required="required" class="form-control" placeholder="Your Email Address" />
+                    <input maxlength="200" type="email" name="email" required="required" class="form-control" placeholder="Your Email Address" />
                 </div>
                 <div class="form-group">
                     <label class="control-label">Your phone </label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Your phone" />
+                    <input maxlength="200" type="text" name="phone" required="required" class="form-control" placeholder="Your phone" />
                 </div>
                  <button class="btn btn-success pull-right" type="submit">Finish!</button>
             </div>

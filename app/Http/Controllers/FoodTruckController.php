@@ -147,8 +147,12 @@ return view('admin\foodtruck\edit',compact('foodtruck','Cities'));
   public function update($id,Request $request)
   {
     $foodtruck=FoodTruck::find($id)->update($request->all());
+    if(auth()->user()->role==1)
     return redirect()->route('foodtruck.index');
-  }
+    else
+    return redirect()->route('home');
+
+}
 
   /**
    * Remove the specified resource from storage.

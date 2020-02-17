@@ -17,6 +17,9 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
+               @if (Auth::user()->role==1)
+
+
           <li class="nav-item">
             <a href="/cities" class="nav-link">
               <i class="nav-icon fas fa-building"></i>
@@ -58,6 +61,29 @@
                 customers Controll
               </p>
             </a>
+          </li>
+
+               @endif
+
+          <li class="nav-item">
+{{--             <a href="/customers" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                customers Controll
+              </p>
+            </a> --}}
+
+            <a  href="{{ route('logout') }}"  class="nav-link"
+     onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">
+                   <i class="fas fa-sign-out-alt"></i>
+      {{ __('Logout') }}
+  </a>
+
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+      @csrf
+  </form>
+
           </li>
 
 
