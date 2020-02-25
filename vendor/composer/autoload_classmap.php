@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\BookRequest' => $baseDir . '/app/BookRequest.php',
     'App\\Category' => $baseDir . '/app/Category.php',
+    'App\\Chat' => $baseDir . '/app/Chat.php',
     'App\\Cities' => $baseDir . '/app/Cities.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -25,6 +26,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\IngredientsController' => $baseDir . '/app/Http/Controllers/IngredientsController.php',
     'App\\Http\\Controllers\\MealsController' => $baseDir . '/app/Http/Controllers/MealsController.php',
+    'App\\Http\\Controllers\\ReviewController' => $baseDir . '/app/Http/Controllers/ReviewController.php',
     'App\\Http\\Controllers\\SliderController' => $baseDir . '/app/Http/Controllers/SliderController.php',
     'App\\Http\\Controllers\\customersController' => $baseDir . '/app/Http/Controllers/customersController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
@@ -43,6 +45,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Slider' => $baseDir . '/app/Slider.php',
+    'App\\Traits\\Ratable\\Ratable' => $baseDir . '/app/Traits/Ratable/Ratable.php',
     'App\\Traits\\uploadable\\uploadable' => $baseDir . '/app/Traits/uploadable/uploadable.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\review' => $baseDir . '/app/review.php',

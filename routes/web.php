@@ -39,6 +39,7 @@ Route::group([ 'middleware' => 'auth'], function()
 
 });
 Route::resource('reviews', 'ReviewController');
+Route::resource('chats', 'ChatController');
 
 
 /* Route::get('/create',function(){

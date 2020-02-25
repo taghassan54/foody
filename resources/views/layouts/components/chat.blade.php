@@ -39,7 +39,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .form-container textarea {
   width: 100%;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 5px 0 15px 0;
   border: none;
   background: #f1f1f1;
   resize: none;
@@ -56,7 +56,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .form-container .btn {
   background-color: #4CAF50;
   color: white;
-  padding: 16px 20px;
+  padding: 10px 16px;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -77,42 +77,53 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .msg-container{
-    border:1px solid black;width:100%;height:200px;overflow:scroll;
+   width:100%;height:250px;overflow:scroll;
 }
 </style>
 
 <button class="open-button" onclick="openForm()"><i class="fa fa-comment"></i></button>
 
 <div class="chat-popup" id="myForm">
-  <form action="/send-message" id="chat" method="POST" class="form-container">
+<form action="{{ Route('chats.store') }}" id="chat" method="POST" class="form-container">
     @csrf
-    <h3>how i can help you ?</h3>
+    <h3>how We can help you ?</h3>
 
     <label for="msg"><b>Message</b></label>
 
 
     <div class="msg-container p-2">
 
-        @for ($i = 0; $i < 30; $i++)
+        <div class="msg-list">
+            @foreach (App\Chat::where([['from',Auth::user()->id],['to',$foodtruck->id],['sender','user']])->orWhere([['from',Auth::user()->id],['to',$foodtruck->id],['sender','food-truck']])->get() as $msg)
 
-        <div class="card bg-light p-2 m-2 @if($i%2==0) text-right @endif" >
-            <p class="mb-0">Some Message text here</p>
-           </div>
+            <div class="card bg-light p-2 m-2 @if($msg->sender=='food-truck') text-right @endif" >
+            <p class="mb-0">{{$msg->message }}</p>
+               </div>
 
-        @endfor
+            @endforeach
+        </div>
+
 
 
 
     </div>
 
-    <textarea placeholder="Type message.." name="msg" required></textarea>
+    <textarea placeholder="Type message.." name="message" id="msg" required></textarea>
+@if (Auth::user()->role==0)
+<input type="hidden" name="to" value="{{ $foodtruck->id }}">
+<input type="hidden" name="from" value="{{ Auth::user()->id }}">
+<input type="hidden" name="sender" value="user">
 
+@else
+
+@endif
     <button type="submit" class="btn">Send</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
 </div>
 
 <script src="/user/js/jquery-3.2.1.min.js"></script>
+<script src="/js/axios.min.js"></script>
 
 <script>
 function openForm() {
@@ -125,7 +136,23 @@ function closeForm() {
 }
 
 $("#chat").submit(function( event ) {
-  alert( "Handler for .submit() called." );
   event.preventDefault();
+
+
+    var msg =$('#msg').val()
+
+    axios.post(this.action,$(this).serialize()).then(
+        res=>{
+            console.log(res)
+        }
+    ).catch()
+    $('#msg').val('')
+  $('.msg-list').append(`
+  <div class="card bg-light p-2 m-2 " >
+            <p class="mb-0">${msg}</p>
+           </div>
+  `)
+  var scrollPos =  $(".msg-container").offset().top;
+
 });
 </script>

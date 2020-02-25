@@ -389,6 +389,7 @@ class ComposerStaticInit857bef8de2f6b22f51086c144a2a9442
     public static $classMap = array (
         'App\\BookRequest' => __DIR__ . '/../..' . '/app/BookRequest.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+        'App\\Chat' => __DIR__ . '/../..' . '/app/Chat.php',
         'App\\Cities' => __DIR__ . '/../..' . '/app/Cities.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -406,6 +407,7 @@ class ComposerStaticInit857bef8de2f6b22f51086c144a2a9442
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\IngredientsController' => __DIR__ . '/../..' . '/app/Http/Controllers/IngredientsController.php',
         'App\\Http\\Controllers\\MealsController' => __DIR__ . '/../..' . '/app/Http/Controllers/MealsController.php',
+        'App\\Http\\Controllers\\ReviewController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReviewController.php',
         'App\\Http\\Controllers\\SliderController' => __DIR__ . '/../..' . '/app/Http/Controllers/SliderController.php',
         'App\\Http\\Controllers\\customersController' => __DIR__ . '/../..' . '/app/Http/Controllers/customersController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -424,6 +426,7 @@ class ComposerStaticInit857bef8de2f6b22f51086c144a2a9442
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Slider' => __DIR__ . '/../..' . '/app/Slider.php',
+        'App\\Traits\\Ratable\\Ratable' => __DIR__ . '/../..' . '/app/Traits/Ratable/Ratable.php',
         'App\\Traits\\uploadable\\uploadable' => __DIR__ . '/../..' . '/app/Traits/uploadable/uploadable.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\review' => __DIR__ . '/../..' . '/app/review.php',
