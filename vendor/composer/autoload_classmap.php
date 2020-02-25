@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\BookRequest' => $baseDir . '/app/BookRequest.php',
     'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Cities' => $baseDir . '/app/Cities.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -16,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
+    'App\\Http\\Controllers\\BookRequestController' => $baseDir . '/app/Http/Controllers/BookRequestController.php',
     'App\\Http\\Controllers\\CategoryController' => $baseDir . '/app/Http/Controllers/CategoryController.php',
     'App\\Http\\Controllers\\CitiesController' => $baseDir . '/app/Http/Controllers/CitiesController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
@@ -23,6 +25,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\IngredientsController' => $baseDir . '/app/Http/Controllers/IngredientsController.php',
     'App\\Http\\Controllers\\MealsController' => $baseDir . '/app/Http/Controllers/MealsController.php',
+    'App\\Http\\Controllers\\SliderController' => $baseDir . '/app/Http/Controllers/SliderController.php',
     'App\\Http\\Controllers\\customersController' => $baseDir . '/app/Http/Controllers/customersController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
@@ -42,6 +45,7 @@ return array(
     'App\\Slider' => $baseDir . '/app/Slider.php',
     'App\\Traits\\uploadable\\uploadable' => $baseDir . '/app/Traits/uploadable/uploadable.php',
     'App\\User' => $baseDir . '/app/User.php',
+    'App\\review' => $baseDir . '/app/review.php',
     'BeyondCode\\DumpServer\\DumpServerCommand' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
     'BeyondCode\\DumpServer\\DumpServerServiceProvider' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
     'BeyondCode\\DumpServer\\Dumper' => $vendorDir . '/beyondcode/laravel-dump-server/src/Dumper.php',

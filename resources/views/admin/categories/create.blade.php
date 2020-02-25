@@ -16,9 +16,9 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-        <form action="{{ Route('sliders.store') }}" enctype="multipart/form-data" method="POST">
+        <form action="{{ Route('category.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
-                @include('admin.sliders.fields')
+                @include('admin.categories.fields')
             </form>
         </div>
 

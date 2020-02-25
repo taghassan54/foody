@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\uploadable\uploadable;
+use App\Traits\Ratable\Ratable;
 
 class FoodTruck extends Model
 {
-    use uploadable;
+    use uploadable,Ratable;
     protected $table = 'foodtruck';
     public $timestamps = true;
 
@@ -29,4 +30,7 @@ class FoodTruck extends Model
     {
         return $this->hasMany('App\Meals','foodtruck_id');
     }
+
+
+
 }

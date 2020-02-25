@@ -8,9 +8,9 @@
           <h3 class="card-title">foodtruck Controll</h3>
 
           <div class="card-tools">
-
+            @if(Auth::user()->role==1)
             @include('admin.foodtruck.create')
-
+            @endif
           </div>
         </div>
         <!-- /.card-header -->
@@ -25,6 +25,7 @@
                 <th>description</th>
                 <th>status</th>
                 <th>Image</th>
+                <th>Rating</th>
                 <th>controll</th>
               </tr>
             </thead>
@@ -39,6 +40,7 @@
                     <td> {{ $foodtruck->description }} </td>
                     <td> {{ $foodtruck->status }} </td>
                     <td> <img src="{{ $foodtruck->img }}" alt="" width="100" srcset=""> </td>
+                    <td> {{ $foodtruck->rating }} </td>
                     <td>
                     <form action="{{ Route('foodtruck.destroy',$foodtruck->id) }}" method="POST">
                         @csrf

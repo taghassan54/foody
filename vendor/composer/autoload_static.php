@@ -387,6 +387,7 @@ class ComposerStaticInit857bef8de2f6b22f51086c144a2a9442
     );
 
     public static $classMap = array (
+        'App\\BookRequest' => __DIR__ . '/../..' . '/app/BookRequest.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Cities' => __DIR__ . '/../..' . '/app/Cities.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -397,6 +398,7 @@ class ComposerStaticInit857bef8de2f6b22f51086c144a2a9442
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\BookRequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/BookRequestController.php',
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\CitiesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CitiesController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -404,6 +406,7 @@ class ComposerStaticInit857bef8de2f6b22f51086c144a2a9442
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\IngredientsController' => __DIR__ . '/../..' . '/app/Http/Controllers/IngredientsController.php',
         'App\\Http\\Controllers\\MealsController' => __DIR__ . '/../..' . '/app/Http/Controllers/MealsController.php',
+        'App\\Http\\Controllers\\SliderController' => __DIR__ . '/../..' . '/app/Http/Controllers/SliderController.php',
         'App\\Http\\Controllers\\customersController' => __DIR__ . '/../..' . '/app/Http/Controllers/customersController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -423,6 +426,7 @@ class ComposerStaticInit857bef8de2f6b22f51086c144a2a9442
         'App\\Slider' => __DIR__ . '/../..' . '/app/Slider.php',
         'App\\Traits\\uploadable\\uploadable' => __DIR__ . '/../..' . '/app/Traits/uploadable/uploadable.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\review' => __DIR__ . '/../..' . '/app/review.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',

@@ -24,6 +24,13 @@ class FoodTruckController extends Controller
         $categories=Category::all();
     return view('admin.foodtruck.index',compact('foodtrucks','Cities','categories'));
   }
+  public function register()
+  {
+      $foodtrucks=FoodTruck::paginate(10);
+        $Cities=Cities::all();
+        $categories=Category::all();
+    return view('auth.register_food_truck',compact('foodtrucks','Cities','categories'));
+  }
 
   /**
    * Show the form for creating a new resource.
@@ -69,6 +76,42 @@ if(User::where('email',$request->email)->count()>0){
         'role' =>2,
     ]);
     return back();
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @return Response
+   */
+  public function storeregister(Request $request)
+  {
+
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255'],
+        'password' => ['required', 'string', 'min:8'],
+    ]);
+if(User::where('email',$request->email)->count()>0){
+    $user=User::where('email',$request->email)->first();
+}else{
+    $user= User::create([
+        'name' =>  $request->owner,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+    ]);
+}
+
+
+
+
+    $data=$request->all();
+    $data['user_id']=$user->id;
+
+    $foodtruck=FoodTruck::create($data);
+    $user->update([
+        'role' =>2,
+    ]);
+    return redirect()->route('login');
   }
 
   /**

@@ -14,12 +14,11 @@
 Route::get('/cpanel', function () {
     return view('cpanel');
 });
-/* Route::get('/trucks', function () {
-    return view('trucks');
-}); */
+Route::get('/food-truck-register','FoodTruckController@register');
+Route::post('/food-truck-register','FoodTruckController@storeregister')->name('food-truck.register');
+
 Route::get('/', function () {
    return  redirect()->route('home');
-    // return view('welcome');
 });
 
 Auth::routes();
@@ -39,6 +38,7 @@ Route::group([ 'middleware' => 'auth'], function()
     Route::resource('sliders', 'SliderController');
 
 });
+Route::resource('reviews', 'ReviewController');
 
 
 /* Route::get('/create',function(){
