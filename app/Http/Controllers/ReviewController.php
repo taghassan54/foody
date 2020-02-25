@@ -36,7 +36,8 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        review::create($request->all());
+        return back();
     }
 
     /**

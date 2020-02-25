@@ -41,6 +41,10 @@
     @include('layouts.components.recipes')
 
 
+
+    @include('layouts.components.reviews')
+
+
     <script>
 
         mapboxgl.accessToken = 'pk.eyJ1Ijoic3VzaGFtIiwiYSI6ImNqanAxMHkybDdiemIza3I1Zmp6cHNyZmEifQ.WjMlTsgbvIVtQdmY_AHF_g';

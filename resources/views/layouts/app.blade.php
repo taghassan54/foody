@@ -21,6 +21,12 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="/user/css/style.css">
+    <style>
+        .checked {
+          color: orange;
+        }
+        </style>
+
   </head>
   <body>
 @yield('css')
@@ -30,8 +36,8 @@
 
 
 @yield('content')
-
-
+  </div>
+  @include('layouts.components.chat')
     <!-- loader -->
     <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
 
@@ -47,6 +53,8 @@
 
 
     <script src="/user/js/main.js"></script>
-@yield('js')
+
+
+    @yield('js')
   </body>
 </html>

@@ -37,6 +37,7 @@
       <div class="bg-image order-1" style="background-image: url('{{ $foodtruck->img }}');" data-aos="fade"></div>
       <div class="text order-1">
       <a href="/trucks/{{ $foodtruck->id }}"><h3> {{ $foodtruck->name }}</h3></a>
+      <B>Stars : {{ $foodtruck->stars }} - {{ $foodtruck->rating }} </B>
         <p> {{ $foodtruck->description }} </p>
         <p class="text-primary h5"><span style="color:red"> {{ $foodtruck->fee?$foodtruck->fee:0 }} SAR </span> for Day</p>
         <a href="/trucks/{{ $foodtruck->id }}/booking"  class="btn btn-xs btn-info">Book Now</a>

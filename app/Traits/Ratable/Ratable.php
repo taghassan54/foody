@@ -7,13 +7,14 @@ namespace App\Traits\Ratable;
 trait Ratable
 {
 
-    public function review()
+    public function reviews()
     {
-        return $this->hasMany('App\review','foodtruck_id');
+        return $this->hasMany('App\review','foodtruck_id')->orderBy('created_at','ASC');
     }
 
+
     public function getRatingAttribute($value){
-        return  $this->accountRating($this->review,$this->review->count());
+        return  $this->accountRating($this->reviews,$this->reviews->count());
     }
 
     public static function accountRating($rateArray, $count)
@@ -46,4 +47,57 @@ trait Ratable
         }
     }
 
+
+    public function getStarsAttribute($value){
+
+        $r=$this->rating;
+        if($r>4){
+            echo '
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+            ';
+            return ;
+        }elseif ($r>3) {
+            echo '
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+            ';
+            return ;
+        }elseif ($r>2) {
+            echo '
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star"></span>
+            ';
+            return ;
+        }
+        elseif ($r>1) {
+            echo '
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star"></span>
+            ';
+            return ;
+        }
+        elseif ($r>0) {
+            echo '
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star"></span>
+            ';
+            return ;
+        }
+    }
 }
