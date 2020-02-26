@@ -40,6 +40,7 @@ Route::group([ 'middleware' => 'auth'], function()
 });
 Route::resource('reviews', 'ReviewController');
 Route::resource('chats', 'ChatController');
+Route::get('/truck/{id}/chats','FoodTruckController@chats');
 
 
 /* Route::get('/create',function(){

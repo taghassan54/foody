@@ -161,6 +161,16 @@ if(User::where('email',$request->email)->count()>0){
    * @param  int  $id
    * @return Response
    */
+  public function chats($id)
+  {
+
+  }
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return Response
+   */
   public function booking($id)
   {
     $foodtruck=FoodTruck::find($id);

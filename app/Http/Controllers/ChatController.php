@@ -52,7 +52,7 @@ class ChatController extends Controller
      */
     public function show(Chat $chat)
     {
-        //
+        return $chat;
     }
 
     /**
