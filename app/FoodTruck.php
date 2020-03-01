@@ -34,7 +34,28 @@ class FoodTruck extends Model
     {
     return \App\Chat::where([['from',$this->id],['sender','food-truck']])->orWhere([['to',$this->id],['sender','user']]);
     }
+    public function getChatWithAttribute()
+    {
+        $users = User::orderBy('created_at', 'desc')->get();
+        $col = collect();
+        foreach ($users as $user) {
+            if ($this->chatWith($user))
+                $col->push($user);
+        }
+    return  $col;
+    }
 
+    public static function chatWith($user)
+    {
+        if (Chat::where([['from',$user->id],['sender','food-truck']])->orWhere([['to',$user->id],['sender','user']])->count() > 0)
+            return true;
+        else
+            return false;
+    }
+
+    public function GetChatWith($id){
+        return \App\Chat::where([['from',$this->id],['to',$id],['sender','food-truck']])->orWhere([['to',$this->id],['from',$id],['sender','user']]);
+    }
 
 
 }

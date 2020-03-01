@@ -163,8 +163,8 @@ if(User::where('email',$request->email)->count()>0){
    */
   public function chats($id)
   {
-    $foodtruck=FoodTruck::find($id)->Chat;
-    dd($foodtruck->get());
+    $foodtruck=FoodTruck::find($id);
+   // dd($foodtruck->get());
     $categories=Category::all();
     return view("admin.foodtruck.chat",compact('foodtruck','categories'));
   }
