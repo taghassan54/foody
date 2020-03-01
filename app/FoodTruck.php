@@ -30,6 +30,10 @@ class FoodTruck extends Model
     {
         return $this->hasMany('App\Meals','foodtruck_id');
     }
+    public function getChatAttribute()
+    {
+    return \App\Chat::where([['from',$this->id],['sender','food-truck']])->orWhere([['to',$this->id],['sender','user']]);
+    }
 
 
 

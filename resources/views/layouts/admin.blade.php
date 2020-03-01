@@ -30,7 +30,7 @@
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Foddy Admin</h1>
           </div><!-- /.col -->
-
+          @yield('css')
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>

@@ -32,6 +32,12 @@
                   <form action="{{ Route('foodtruck.destroy',$foodtruck->id) }}" method="POST">
                       @csrf
                       @method('delete')
+                      <a href="/truck/{{ $foodtruck->id }}/chats" class="btn btn-info">
+                        <i class="fa fa-comment"></i>
+
+                            
+
+                        </a>
                   <a href="/foodtruck/{{ $foodtruck->id }}" class="btn btn-primary">show</a>
                   <a href="/foodtruck/{{ $foodtruck->id }}/edit" class="btn btn-info">Edit</a>
 

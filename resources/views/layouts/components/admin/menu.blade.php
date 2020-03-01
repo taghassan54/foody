@@ -65,16 +65,7 @@
 
                @endif
 
-               @if (Auth::user()->role==2)
-               <li class="nav-item">
-               <a href="/truck/{{ Auth::user()->id }}/chats" class="nav-link">
-                <i class="fa fa-comment"></i>
-                  <p>
-                    chats
-                  </p>
-                </a>
-              </li
-               @endif
+
 
           <li class="nav-item">
 {{--             <a href="/customers" class="nav-link">
