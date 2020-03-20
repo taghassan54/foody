@@ -9,7 +9,7 @@
 
           <div class="card-tools">
 
-            @include('admin.categories.create')
+            @include('admin.sliders.create')
 
           </div>
         </div>
